@@ -1,0 +1,44 @@
+//@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+
+$transparent: rgba(255, 255, 255, 0);
+$white: #fff;
+$black: #000;
+
+/* Fonts */
+
+$btn-select-font: Roboto, sans-serif;
+$FontAwesome-font: FontAwesome;
+$btn-roboto-font: Roboto-Black;
+$font-lato-semibold: Lato-Semibold;
+$font-lato-thinitalic: Lato-ThinItalic;
+$font-lato-italic: Lato-Italic;
+$font-lato: Lato, sans-serif;
+$font-lato-black: Lato-Black;
+
+
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -ms-transition: $transition;
+  transition: $transition;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin um-placeholder($color: $input-color-placeholder, $transform: uppercase, $textAlign: center) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    text-transform: $transform;
+    text-align: $textAlign;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; text-transform: $transform; text-align: $textAlign;} // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; text-transform: $transform; text-align: $textAlign;} // Safari and Chrome
+}
